@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/kuvat">
+        <file>miina.png</file>
+        <file>lippu.png</file>
+        <file>open.png</file>
+        <file>kysymys.png</file>
+        <file>tyhja.png</file>
+    </qresource>
+</RCC>

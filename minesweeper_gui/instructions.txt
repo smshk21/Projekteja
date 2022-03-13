@@ -1,0 +1,41 @@
+Itse miinaharavan (minesweeper)-pelin säännöt on oletettu käyttäjällä olevan hallussa, joten niitä ei tässä dokumentissa lähdetä avaamaan.
+
+Application-outputiin tulostuu jokin outo virheilmoitus, mistä en ole ikinä kuullutkaan eikä minulla ole hajuakaan mistään mitä siinä lukee. netistäkään ei mitään tähän löydy. Se ei kuitenkaan vaikuta pelin toimintaan mitenkään, joten jätän sen rauhaan, koska en tiedä mitä sille voisi tehdä.
+
+Toteutin kaiken koodissa enkä tehnyt mitään Qt designerillä.
+
+Aivan alussa käyttäjän tarvitsee syöttää haluamansa siemenluku (ei ole pakko, se on oletuksena 1) ja sen jälkee painaa "uusi peli"-painonappia ja sen jälkeen lauta generoidaan.
+
+Oikeassa yläkulmassa sijaitsevaa nappia painamalla käyttäjä voi vaihtaa sitä, mitä hän haluaa tapahtuvan, kun hän painaa pelikenttää. Jos kyseisessä napissa on lapio, niin kentän painallus avaa sen. Jos siinä on lippu/kysymysmerkki, niin kentän painallus asettaa siihen lipun/kysymysmerkin. Jos siinä on jo valmiiksi kyseinen symboli, niin se poistetaan ruudusta. Lipun tai kysymysmerkin sisältävää ruutua ei voi avata, vaan symboli täytyy ensin poistaa ruudusta ennen kuin sen voi avata. Se siis poistetaan "lisäämällä siihen sama symboli uudestaan" eli esim. jos ruudussa on lippu niin paina sitä lipulla, niin se katoaa.
+
+"Kaikki OK?"-nappia painamalla käyttäjä saa tiedon siitä, että onko hän asettanut kaikki liput oikein tähän asti. Jos hän ei ole asettanut lippuja, niin vastaus on myös kyllä. 
+
+Jos avatussa ruudussa on miina, niin kaikki pelikentän napit disabloidaan, miinaruudut avataan ja tulostetaan häviöilmoitus QLabeliin. 
+Jos kaikki paitsi miinaruudut on avattu, niin käyttäjä voitti pelin. Lippuja ei ole pakko asettaa lainkaan.
+
+"Uusi peli" -napista voi aloittaa uuden pelin annetulla siemenluvulla milloin tahansa. kaikki nollaantuu, kun sitä painaa.
+
+Ylhäällä olevissa LCD-numeroissa näkyy kyseisessä pelissä kuluneiden minuuttien ja sekuntien ajan.
+
+Lisäominaisuudet:
+
+1. Sen sijaan, että avautuvaan ruutuun tulostettaisiin jokin merkki, siihen tulee näkyviin jokin sopiva kuva tai ikoni. (20 p.)
+	Painonappiin tulee aina ikoni, jonka pgn-versio on projektin recources-tiedostossa.
+
+2. Avaamisen ja lipun asettamisen lisäksi vaihtoehtona on myös kysymysmerkin asettaminen. (5 p.)
+	Painamalla oikeassa yläruudussa olevaa nappia käyttäjä voi valita avaamisen, lipun ja kysymysmerkin välillä.
+
+3. Sen sijaan (tai lisäksi), että avaaminen ja lippu (ja lisäksi mahdollinen kysymysmerkki) valittaisiin radiopainikkeella, valinta tapahtuu samasta painonapista vuorotellen. Painonappiin tulee näkyviin, mikä vaihtoehdoista on valittu. (15 p.)
+	On tämä kyseinen oikeassa yläkulmassa oleva nappi. Valinta tallentuu aina attribuuttiin muistiin, joka tarkastetaan, kun ruutua klikataan.
+
+5. Pelaaja voi kesken pelin tarkistaa, onko kaikki siihen mennessä ok eli onko siihen mennessä asetetut liput oikeissa paikoissa. (10 p.)
+	"Kaikki OK?" nappi toteuttaa tämän toiminnon. Jos jossain ruudussa ei ole miinaa, mutta on lippu, niin napin viereen tulostuu "Ei." (labelissa). Muuten tulostuu "Kyllä!". 
+
+7. Aloitusruudussa ei voi olla miinaa riippumatta siitä, mikä tämä aloitusruutu on (eli minkä ruudun pelaaja ensiksi valitsee). (10 p.)
+	Jos käyttäjän ensimmäisessä avaamassa ruudussa on miina, niin se siirretään johonkin toiseen ruutuun.
+
+8.  Jos kaikki avaamattomat ruudut sisältävät miinan, ne avautuvat automaattisesti. (5 p.)
+	Jos käyttäjä painaa ruutua, jossa on miina, niin kaikki miinaruuudt aukeavat. Jos käyttäjä voittaa, niin kaikki miinaruudut (myös lipun sisältävät) paljastetaan 
+
+
+
